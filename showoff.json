@@ -1,0 +1,7 @@
+{
+  "name": "CouchDB on Rails",
+  "sections": [
+    {"section": "01_intro"},
+    {"section": "02_http"}
+  ]
+}
