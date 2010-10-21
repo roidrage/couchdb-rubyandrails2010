@@ -1,5 +1,15 @@
 !SLIDE
 
+# CouchDB is a database #
+
+!SLIDE center
+
+# B-Tree #
+
+![B-Tree](btree.png)
+
+!SLIDE
+
 # Querying for Data #
 
 !SLIDE
@@ -61,6 +71,28 @@
       return sum(values);
     }
 
+!SLIDE
+
+# Reduce Reduced #
+
+    @@@javascript
+    _sum
+
+!SLIDE javascript small
+
+# Design Documents #
+
+    @@@ javascript
+    {
+      "_id": "_design/posts"
+      "views": {
+        "by_tag": {
+          "map": "function(doc) {..}",
+          "reduce": "function(keys, values, rereduce) {..}"
+        }
+      }
+    }
+
 !SLIDE small
 
 # Getting that data #
@@ -71,9 +103,9 @@
     {"key":null,"value":2}
     ]}
 
-!SLIDE small
+!SLIDE bullets incremental
 
-## Only reduces based on the key ##
+## Only returns reduce results ##
 
 * 2 Documents with tag `riak`
 * Assumes `reduce=true`
@@ -85,27 +117,40 @@
 * Must be a valid JSON value
 * `"riak"` not `riak`
 
-!SLIDE small
+!SLIDE smaller
 
 # Include documents #
 
-    /rubyenrails/_design/posts/_view/by_tag?key="riak"&include_docs=true&reduce=false
+    .../_view/by_tag?key="riak"&include_docs=true&reduce=false
 
     {"total_rows":4,"offset":2,"rows":[
-    {"id":"eb28b751a","key":"riak","value":1,"doc":{"_id":"eb28b751a","_rev":"6-2fd88529191482b8cebfe9136dbda4a1","title":"Why Riak Search Matters...","tags":["riak","full text"],"_attachments":{"attachment.png":{"content_type":"application/x-www-form-urlencoded","revpos":5,"length":36145,"stub":true}}}},
-    {"id":"eb28b751b","key":"riak","value":1,"doc":{"_id":"eb28b751b","_rev":"1-b7bbd1aff51247a80653147b407d76c7","title":"Why I Am Excited About Riak Search","tags":["riak"]}}
+    {"id":"eb28b751a","key":"riak","value":1,"doc":
+        {"title":"Why Riak Search Matters...",...}}}},
+    {"id":"eb28b751b","key":"riak","value":1,"doc":
+        {"title":"Why I'm Excited...",...}}
     ]}
 
 !SLIDE small
 
-## Group by Tags ##
+## Group by Tag ##
 
     .../_view/by_tag?key="riak"&group=true
 
     {"rows":[
     {"key":"riak","value":2}
     ]}
-    
+
+!SLIDE small
+
+## Group by Tags ##
+
+    .../_view/by_tag?group=true
+
+    {"rows":[
+    ["key":"couchdb","value":1]
+    {"key":"full text search","value":1}
+    {"key":"riak","value":2}
+    ]}
 !SLIDE
 
 # Slightly more complex #
@@ -138,7 +183,8 @@
     .../_view/by_tag?reduce=false&include_docs=true&limit=1 
 
     {"total_rows":4,"offset":0,"rows":[
-    {"id":"eb28b751a33d1bf9d7dfffd67001b1eb","key":["couchdb","2010/11/12 18:25:16 +0100"],"value":1}
+    {"id":"eb28b751a","key":
+      ["couchdb","2010/11/12 18:25:16 +0100"],"value":1}
     ]}
     
 !SLIDE

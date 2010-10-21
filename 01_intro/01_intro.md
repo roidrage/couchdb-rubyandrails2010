@@ -14,20 +14,13 @@
 * <http://paperplanes.de>
 * <http://github.com/mattmatt>
 
-!SLIDE
+!SLIDE center
 
-# What gives? #
-
-!SLIDE
-
-## ”CouchDB is built of the Web“ ##
-<p class="caption">
-<a href="http://jacobian.org/writing/of-the-web/">Jacob Kaplan-Moss</a>
-</p>
+<a href="http://scalarium.com"><img src="scalarium.png"/></a>
 
 !SLIDE
 
-# CouchDB #
+# CouchDB? #
 
 !SLIDE bullets incremental
 
@@ -46,6 +39,13 @@
 * serves JSON
 * runs JavaScript
 
+!SLIDE
+
+## ”CouchDB is built of the Web“ ##
+<p class="caption">
+<a href="http://jacobian.org/writing/of-the-web/">Jacob Kaplan-Moss</a>
+</p>
+
 !SLIDE center
 
 ## Documents ##
@@ -54,7 +54,7 @@
 
 !SLIDE small javascript
 
-## Documents ##
+# Documents #
 
     @@@ javascript
     {
@@ -65,3 +65,7 @@
       "tags": ["riak", "full text search"]
     }
 
+!SLIDE
+
+### A self-contained, semi-structured piece of data. ###
+<p class="caption">Me, 2010</p>

@@ -3,6 +3,8 @@
   "sections": [
     {"section": "01_intro"},
     {"section": "02_http"},
-    {"section": "03_querying"}
+    {"section": "03_querying"},
+    {"section": "04_ruby"},
+    {"section": "05_wrap_up"}
   ]
 }
