@@ -1,3 +1,7 @@
+!SLIDE
+
+# Cool Things #
+
 !SLIDE bullets incremental
 
 # Changes Feed #
@@ -15,12 +19,12 @@
     {"seq":30,"id":"eb28b751a","changes":[{"rev":"1-a8f0890"}]}
     {"seq":31,"id":"eb28b751a","changes":[{"rev":"5-4404521"}]}
 
-!SLIDE
+!SLIDE bullets incremental
 
 * Can be filtered using JavaScript
 * Use to e.g. expire caches
 
-!SLIDE
+!SLIDE bullets incremental
 
 # Replication #
 
@@ -28,17 +32,19 @@
 * With any database
 * At any time
 
-!SLIDE
+!SLIDE center
 
 # Replication #
 
 ![Replication](replication.png)
 
-!SLIDE
+!SLIDE center
 
 # Offline by Default #
 
 ![Offline](offline.png)
+
+!SLIDE
 
 # CouchDB Gotchas #
 

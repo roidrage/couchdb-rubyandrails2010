@@ -62,7 +62,7 @@
       }
     }
 
-!SLIDE
+!SLIDE javascript
 
 # Reduce #
 
@@ -71,7 +71,7 @@
       return sum(values);
     }
 
-!SLIDE
+!SLIDE javascript
 
 # Reduce Reduced #
 
@@ -82,7 +82,6 @@
 
 # Design Documents #
 
-    @@@ javascript
     {
       "_id": "_design/posts"
       "views": {
@@ -124,10 +123,10 @@
     .../_view/by_tag?key="riak"&include_docs=true&reduce=false
 
     {"total_rows":4,"offset":2,"rows":[
-    {"id":"eb28b751a","key":"riak","value":1,"doc":
-        {"title":"Why Riak Search Matters...",...}}}},
-    {"id":"eb28b751b","key":"riak","value":1,"doc":
-        {"title":"Why I'm Excited...",...}}
+      {"id":"eb28b751a","key":"riak","value":1,"doc":
+          {"title":"Why Riak Search Matters...",...}}}},
+      {"id":"eb28b751b","key":"riak","value":1,"doc":
+          {"title":"Why I'm Excited...",...}}
     ]}
 
 !SLIDE small
@@ -137,7 +136,7 @@
     .../_view/by_tag?key="riak"&group=true
 
     {"rows":[
-    {"key":"riak","value":2}
+      {"key":"riak","value":2}
     ]}
 
 !SLIDE small
@@ -147,9 +146,9 @@
     .../_view/by_tag?group=true
 
     {"rows":[
-    ["key":"couchdb","value":1]
-    {"key":"full text search","value":1}
-    {"key":"riak","value":2}
+      {"key":"couchdb","value":1}
+      {"key":"full text search","value":1}
+      {"key":"riak","value":2}
     ]}
 !SLIDE
 
@@ -172,9 +171,9 @@
 ## Resulting Keys ##
 
     @@@ javascript
-    ["riak","2010/10/20 18:25:16 +0100"]
-    ["riak","2010/10/12 18:25:16 +0100"]
-    ["couchdb","2010/09/01 18:25:16 +0100"]
+    ["riak",    "2010/10/20 18:25:16 +0100"]
+    ["riak",    "2010/10/12 18:25:16 +0100"]
+    ["couchdb", "2010/09/01 18:25:16 +0100"]
 
 !SLIDE smaller
 
@@ -196,8 +195,8 @@
     .../_view/by_tag?startkey=["riak"]&endkey=["riak", {}]
 
     {"rows":[
-    {"key":["riak","2010/10/18 17:00:00 +0000"],"value":1},
-    {"key":["riak","2010/10/20 18:25:16 +0100"],"value":1}
+      {"key":["riak","2010/10/18 17:00:00 +0000"],"value":1},
+      {"key":["riak","2010/10/20 18:25:16 +0100"],"value":1}
     ]}
 
 !SLIDE
@@ -210,8 +209,8 @@
       &descending=true
 
     {"rows":[
-    {"key":["riak","2010/10/20 18:25:16 +0100"],"value":1},
-    {"key":["riak","2010/10/12 18:25:16 +0100"],"value":1}
+      {"key":["riak","2010/10/20 18:25:16 +0100"],"value":1},
+      {"key":["riak","2010/10/12 18:25:16 +0100"],"value":1}
     ]}
 
 !SLIDE

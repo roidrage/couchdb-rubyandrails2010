@@ -74,7 +74,7 @@
       view :by_title, :key => [:title, :published_at]
     end
 
-   CouchPotato.database.view(Post.by_title)
+    CouchPotato.database.view(Post.by_title)
 
 !SLIDE
 
@@ -85,7 +85,7 @@
 # [SimplyStored](http://github.com/peritor/simply_stored) #
 
 * ActiveRecord-ish
-* Support for associations
+* Supports associations
 * Based on CouchPotato
 
 !SLIDE ruby small
@@ -113,4 +113,4 @@
     # => <Post#eb28b751a title: "Why Riak..."
 
     Post.find_all_by_tag("riak")
-    # => [<Post...>, <Post...>]
+    # => [<Post...>]
