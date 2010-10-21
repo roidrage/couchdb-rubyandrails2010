@@ -82,9 +82,9 @@
 !SLIDE small javascript
 
     {
-      '_id': 'eb28b751a'
+      "_id': 'eb28b751a"
       "_attachments": {
-        'logo.png': {
+        "logo.png": {
           "content_type": "image/png",
           "revpos": 5,
           "length": 36145,

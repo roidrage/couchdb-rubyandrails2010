@@ -52,11 +52,10 @@
 
 ![Document](document.png)
 
-!SLIDE small javascript
+!SLIDE small 
 
 # Documents #
 
-    @@@ javascript
     {
       "_id": "eb28b751a33d1bf9d7dfffd6700006d5",
       "_rev": "1-6f773089b853fd5f7867562b179a854a",

@@ -12,7 +12,7 @@
 
     $ curl localhost:5984/rubyandrails/_changes?feed=continuous
 
-    {"seq":10,"id":"eb28b751a","changes":[{"rev":"2-eec205a"}],"deleted":true}
+    {"seq":10,"id":"eb28b7510","changes":[{"rev":"2-eec205a"}],"deleted":true}
     {"seq":18,"id":"_design/post","changes":[{"rev":"8-69920ee"}]}
     {"seq":25,"id":"1234567","changes":[{"rev":"9-0d883ef"}]}
     {"seq":28,"id":"eb28b751a","changes":[{"rev":"6-15c29f5"}]}
@@ -65,7 +65,7 @@
 # One Document at a time #
 
 * No joins
-* Only lose links
+* Only loose links
 
 !SLIDE bullets incremental
 

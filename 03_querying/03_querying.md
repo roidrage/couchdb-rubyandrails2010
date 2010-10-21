@@ -10,7 +10,7 @@
 
 !SLIDE
 
-# Querying for Data #
+# Querying Data #
 
 !SLIDE
 
@@ -78,7 +78,7 @@
     @@@javascript
     _sum
 
-!SLIDE javascript small
+!SLIDE smaller
 
 # Design Documents #
 
@@ -99,7 +99,7 @@
     /rubyenrails/_design/posts/_view/by_tag?key="riak"
 
     {"rows":[
-    {"key":null,"value":2}
+      {"key":null,"value":2}
     ]}
 
 !SLIDE bullets incremental
@@ -154,7 +154,7 @@
 
 # Slightly more complex #
 
-!SLIDE 
+!SLIDE small javascript
 
 ## Find by Tag ##
 ## ordered by publication date ##
@@ -192,7 +192,7 @@
 
 !SLIDE smaller
 
-    .../_view/by_tag?startkey=["riak"]&endkey=["riak", {}]
+    .../_view/by_tag?startkey=["riak"]&endkey=["riak",{}]
 
     {"rows":[
       {"key":["riak","2010/10/18 17:00:00 +0000"],"value":1},
@@ -201,11 +201,11 @@
 
 !SLIDE
 
-## Now in descending order ##
+## In descending order ##
 
 !SLIDE smaller
 
-    .../_view/by_tag?startkey=["riak",]&endkey=["riak", {}]
+    .../_view/by_tag?startkey=["riak",{}]&endkey=["riak"]
       &descending=true
 
     {"rows":[
