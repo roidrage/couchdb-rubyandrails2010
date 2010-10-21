@@ -40,6 +40,10 @@
 
 # Everything is a Resource #
 
+!SLIDE center
+
+![Document URI](document_uri.png)
+
 !SLIDE commandline small incremental
 
 # Creating Documents #
@@ -66,7 +70,7 @@
 # Creating Attachments #
 
     $ curl -d @logo.png -X PUT /rubyandrails/eb28b751a/logo.png?rev=1-de1e01
-    {"ok":true,"id":"1234567","rev":"5-b32285dc188a7a5e2a05ee62c6fcfeff"}
+    {"ok":true,"id":"eb28b751a","rev":"5-b32285dc188a7a5e2a05ee62c6fcfeff"}
 
 !SLIDE small
 
