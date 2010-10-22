@@ -47,7 +47,7 @@
 
 !SLIDE center
 
-![Document URI](document_uri.jpg)
+![Document URI](document_uri.png)
 
 !SLIDE commandline small incremental
 

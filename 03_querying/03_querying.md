@@ -20,13 +20,13 @@
 
 ## Map ##
 
-![Map](map.jpg)
+![Map](map.png)
 
 !SLIDE center
 
 ## Reduce ##
 
-![Reduce](reduce.jpg)
+![Reduce](reduce.png)
 
 !SLIDE bullets incremental
 
@@ -234,11 +234,11 @@
 
 !SLIDE center
 
-![Key](collation_keys.jpg)
+![Key](collation_keys.png)
 
 !SLIDE center
 
-![Range](collation_range.jpg)
+![Range](collation_range.png)
 
 !SLIDE bullets incremental
 
