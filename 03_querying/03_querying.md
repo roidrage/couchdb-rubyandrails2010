@@ -16,13 +16,17 @@
 
 # Map/Reduce #
 
-!SLIDE
+!SLIDE center
 
-# Map transforms data #
+## Map ##
 
-!SLIDE
+![Map](map.jpg)
 
-# Reduce aggregates data #
+!SLIDE center
+
+## Reduce ##
+
+![Reduce](reduce.jpg)
 
 !SLIDE bullets incremental
 
@@ -31,6 +35,14 @@
 * Map generates lookup keys
 * Keys point to a document
 * Keys can have additional values
+
+!SLIDE bullets incremental
+
+# Views #
+
+* JavaScript
+* Erlang
+* ...
 
 !SLIDE javascript
 
@@ -92,11 +104,11 @@
       }
     }
 
-!SLIDE small
+!SLIDE small commandline incremental
 
 # Getting that data #
 
-    /rubyenrails/_design/posts/_view/by_tag?key="riak"
+    $ /rubyenrails/_design/posts/_view/by_tag?key="riak"
 
     {"rows":[
       {"key":null,"value":2}
@@ -116,11 +128,11 @@
 * Must be a valid JSON value
 * `"riak"` not `riak`
 
-!SLIDE smaller
+!SLIDE smaller commandline incremental
 
 # Include documents #
 
-    .../_view/by_tag?key="riak"&include_docs=true&reduce=false
+    $ .../_view/by_tag?key="riak"&include_docs=true&reduce=false
 
     {"total_rows":4,"offset":2,"rows":[
       {"id":"eb28b751a","key":"riak","value":1,"doc":
@@ -129,21 +141,21 @@
           {"title":"Why I'm Excited...",...}}
     ]}
 
-!SLIDE small
+!SLIDE small commandline incremental
 
 ## Group by Tag ##
 
-    .../_view/by_tag?key="riak"&group=true
+    $ .../_view/by_tag?key="riak"&group=true
 
     {"rows":[
       {"key":"riak","value":2}
     ]}
 
-!SLIDE small
+!SLIDE small commandline incremental
 
 ## Group by Tags ##
 
-    .../_view/by_tag?group=true
+    $ .../_view/by_tag?group=true
 
     {"rows":[
       {"key":"couchdb","value":1}
@@ -175,11 +187,11 @@
     ["riak",    "2010/10/12 18:25:16 +0100"]
     ["couchdb", "2010/09/01 18:25:16 +0100"]
 
-!SLIDE smaller
+!SLIDE smaller commandline incremental
 
 ## Only the first document ##
 
-    .../_view/by_tag?reduce=false&include_docs=true&limit=1 
+    $ .../_view/by_tag?reduce=false&limit=1 
 
     {"total_rows":4,"offset":0,"rows":[
     {"id":"eb28b751a","key":
@@ -190,9 +202,9 @@
 
 ## Only posts tagged with `riak` ##
 
-!SLIDE smaller
+!SLIDE smaller commandline incremental
 
-    .../_view/by_tag?startkey=["riak"]&endkey=["riak",{}]
+    $ .../_view/by_tag?startkey=["riak"]&endkey=["riak",{}]
 
     {"rows":[
       {"key":["riak","2010/10/18 17:00:00 +0000"],"value":1},
@@ -203,10 +215,9 @@
 
 ## In descending order ##
 
-!SLIDE smaller
+!SLIDE smaller commandline incremental
 
-    .../_view/by_tag?startkey=["riak",{}]&endkey=["riak"]
-      &descending=true
+    $ .../by_tag?startkey=["riak",{}]&endkey=["riak"]&descending=true
 
     {"rows":[
       {"key":["riak","2010/10/20 18:25:16 +0100"],"value":1},
@@ -223,11 +234,11 @@
 
 !SLIDE center
 
-![Key](collaction_keys.png)
+![Key](collation_keys.jpg)
 
 !SLIDE center
 
-![Range](collation_range.png)
+![Range](collation_range.jpg)
 
 !SLIDE bullets incremental
 
